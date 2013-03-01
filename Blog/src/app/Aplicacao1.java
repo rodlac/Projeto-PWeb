@@ -13,7 +13,7 @@ public class Aplicacao1 {
 		dao.begin();
 		Categoria c1 = new Categoria();
 		c1.setNome("Teste1");
-		c1.setDescricao("Testando");
+		c1.setDescricao("Testando1");
 		
 		Categoria c2 = new Categoria();
 		c2.setNome("Teste2");
