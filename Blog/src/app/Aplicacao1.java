@@ -13,11 +13,11 @@ public class Aplicacao1 {
 		dao.begin();
 		Categoria c1 = new Categoria();
 		c1.setNome("Teste1");
-		c1.setDescricao("Testando1");
+		c1.setDescricao("Testando");
 		
 		Categoria c2 = new Categoria();
 		c2.setNome("Teste2");
-		c2.setDescricao("Testando");
+		c2.setDescricao("Testando1");
 		c2.setPai(c1);
 		
 		dao.persist(c1);
