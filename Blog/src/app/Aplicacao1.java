@@ -12,7 +12,7 @@ public class Aplicacao1 {
 	public void cadastrarCategoria() {
 		dao.begin();
 		Categoria c1 = new Categoria();
-		c1.setNome("Teste1");
+		c1.setNome("Teste");
 		c1.setDescricao("Testando");
 		
 		Categoria c2 = new Categoria();
