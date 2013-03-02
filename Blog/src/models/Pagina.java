@@ -41,7 +41,10 @@ public abstract class Pagina {
 	@ManyToOne(fetch=FetchType.EAGER,optional=false)
 	protected UsuarioCadastrado usuario;
 	
-	public Pagina() {}
+	public Pagina() {
+		this.data_publicacao = new Date();
+		this.data_atualizacao = new Date();
+	}
 	
 	public int getId() {
 		return id;
@@ -76,7 +79,7 @@ public abstract class Pagina {
 	public UsuarioCadastrado getUsuario() {
 		return usuario;
 	}
-	public void setUsuario(UsuarioCadastrado usuario) {
-		this.usuario = usuario;
+	public void setUsuario(UsuarioCadastrado usuario2) {
+		this.usuario = usuario2;
 	}
 }

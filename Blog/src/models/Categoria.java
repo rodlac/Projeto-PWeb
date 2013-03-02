@@ -68,4 +68,12 @@ public class Categoria {
 	public void setArtigos(List<Artigo> artigos) {
 		this.artigos = artigos;
 	}
+
+	@Override
+	public String toString() {
+		return "Categoria [id=" + id + ", nome=" + nome + ", descricao="
+				+ descricao + ", artigos=" + artigos + ", pai=" + pai
+				+ ", filhas=" + filhas + "]";
+	}
+	
 }

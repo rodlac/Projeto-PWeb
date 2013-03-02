@@ -28,7 +28,9 @@ public class UsuarioCadastrado extends Usuario {
 	@OneToMany(mappedBy="usuario",cascade=CascadeType.ALL)
 	private List<Pagina> paginas;
 	
-	public UsuarioCadastrado() {}
+	public UsuarioCadastrado() {
+		this.data_registro = new Date();
+	}
 	
 	public String getLogin() {
 		return login;
