@@ -67,6 +67,11 @@ public class Aplicacao1 {
 		}
 	}
 	
+	public void cadastrarComentario() {
+		//Comentario c1 = new Comentario();
+		//c1.set
+	}
+	
 	public static void main(String[] args) {
 		Aplicacao1 app = new Aplicacao1();
 		app.cadastrarUsuario();
