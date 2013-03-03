@@ -13,7 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Categoria {
+public class Categoria implements Model {
+	
+	private static int contador=1;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -34,7 +36,9 @@ public class Categoria {
 	@OneToMany(mappedBy="pai",cascade=CascadeType.MERGE)
 	private List<Categoria> filhas;
 	
-	public Categoria() {}
+	public Categoria() {
+		this.id = Categoria.contador++;
+	}
 	
 	public int getId() {
 		return id;

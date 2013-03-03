@@ -31,7 +31,7 @@ public abstract class Pagina {
 	protected String texto;
 	
 	@Temporal(TemporalType.DATE)
-	@Column(nullable=false)
+	@Column(nullable=false,columnDefinition="DATETIME")
 	protected Date data_publicacao;
 	
 	@Temporal(TemporalType.DATE)

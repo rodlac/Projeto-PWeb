@@ -7,11 +7,7 @@
 <%@attribute name="name" required="true" %>
 
 <select name="${name}">
-
-    <c:forEach var="elemento" items="${lista}">
-
+    <c:forEach var="elemento" items="${lista}" varStatus="status">
         <option value="${elemento.id}">${elemento.nome}</option>
-
     </c:forEach>
-
 </select>

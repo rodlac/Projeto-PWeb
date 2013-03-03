@@ -5,6 +5,9 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 import controllers.CadastroCategoria;
+import controllers.CadastroComentario;
+import controllers.CadastroPagina;
+import controllers.CadastroUsuario;
 
 /**
  * Application Lifecycle Listener implementation class TestListener
@@ -25,8 +28,14 @@ public class TestListener implements ServletContextListener {
      */
     public void contextInitialized(ServletContextEvent e) {
     	CadastroCategoria ct=null;
+    	CadastroPagina cp=null;
+    	CadastroComentario cc=null;
+    	CadastroUsuario cu=null;
 		try {
 			ct = (CadastroCategoria) CadastroFactory.get(CadastroCategoria.class);
+			cp = (CadastroPagina) CadastroFactory.get(CadastroPagina.class);
+			cc = (CadastroComentario) CadastroFactory.get(CadastroComentario.class);
+			cu = (CadastroUsuario) CadastroFactory.get(CadastroUsuario.class);
 		} catch (InstantiationException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -34,7 +43,11 @@ public class TestListener implements ServletContextListener {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		
     	e.getServletContext().setAttribute("CadastroCategoria", ct);
+    	e.getServletContext().setAttribute("CadastroPagina", cp);
+    	e.getServletContext().setAttribute("CadastroComentario", cc);
+    	e.getServletContext().setAttribute("CadastroUsuario", cu);
     }
 
 	/**

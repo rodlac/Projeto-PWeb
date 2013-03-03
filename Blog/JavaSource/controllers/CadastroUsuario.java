@@ -8,6 +8,7 @@ public class CadastroUsuario extends Cadastro<Usuario> {
 
 	public CadastroUsuario() {
 		super(new DAOUsuario());
+		//super();
 	}
 
 }

@@ -8,6 +8,7 @@ public class CadastroPagina extends Cadastro<Pagina> {
 
 	public CadastroPagina() {
 		super(new DAOPagina());
+		//super();
 	}
 
 }

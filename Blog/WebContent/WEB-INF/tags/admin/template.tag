@@ -18,23 +18,23 @@
 				<div class="well sidebar-nav">
 					<ul class="nav nav-list">
 						<li class="nav-header">Artigos</li>
-						<li><a href="#">Adicionar Novo</a></li>
-						<li><a href="#">Listar todos</a></li>
+						<li><a href="cadastrar-artigo">Adicionar Novo</a></li>
+						<li><a href="listar-artigos">Listar todos</a></li>
 						
 						<li class="nav-header">Páginas Estáticas</li>
-						<li><a href="#">Adicionar Nova</a></li>
-						<li><a href="#">Listar todas</a></li>
+						<li><a href="cadastrar-paginas">Adicionar Nova</a></li>
+						<li><a href="listar-paginas">Listar todas</a></li>
 						
 						<li class="nav-header">Categorias</li>
-						<li><a href="#">Adicionar Nova</a></li>
-						<li><a href="#">Listar todas</a></li>
+						<li><a href="cadastrar-categoria">Adicionar Nova</a></li>
+						<li><a href="listar-categorias">Listar todas</a></li>
 						
 						<li class="nav-header">Comentários</li>
-						<li><a href="#">Listar todos</a></li>
+						<li><a href="listar-comentarios">Listar todos</a></li>
 						
 						<li class="nav-header">Usuários</li>
-						<li><a href="#">Adicionar Novo</a></li>
-						<li><a href="#">Listar todos</a></li>
+						<li><a href="cadastrar-usuario">Adicionar Novo</a></li>
+						<li><a href="listar-usuarios">Listar todos</a></li>
 					</ul>
 				</div>
 			</div>
