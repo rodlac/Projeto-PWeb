@@ -82,4 +82,13 @@ public abstract class Pagina {
 	public void setUsuario(UsuarioCadastrado usuario2) {
 		this.usuario = usuario2;
 	}
+
+	@Override
+	public String toString() {
+		return "Pagina [id=" + id + ", titulo=" + titulo + ", texto=" + texto
+				+ ", data_publicacao=" + data_publicacao
+				+ ", data_atualizacao=" + data_atualizacao + ", usuario="
+				+ usuario + "]";
+	}
+	
 }

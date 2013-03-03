@@ -8,5 +8,4 @@ public class CadastroCategoria extends Cadastro<Categoria> {
 	public CadastroCategoria() {
 		super(new DAOCategoria());
 	}
-
 }
