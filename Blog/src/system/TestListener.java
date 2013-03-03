@@ -24,7 +24,16 @@ public class TestListener implements ServletContextListener {
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
     public void contextInitialized(ServletContextEvent e) {
-    	CadastroCategoria ct = CadastroCategoria.getInstance();
+    	CadastroCategoria ct=null;
+		try {
+			ct = (CadastroCategoria) CadastroFactory.get(CadastroCategoria.class);
+		} catch (InstantiationException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IllegalAccessException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
     	e.getServletContext().setAttribute("CadastroCategoria", ct);
     }
 

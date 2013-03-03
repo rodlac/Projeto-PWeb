@@ -5,6 +5,7 @@ import java.util.Iterator;
 import models.Artigo;
 import models.Categoria;
 import models.UsuarioCadastrado;
+import system.CadastroFactory;
 import controllers.CadastroCategoria;
 import controllers.CadastroComentario;
 import controllers.CadastroPagina;
@@ -17,17 +18,25 @@ public class Aplicacao1 {
 	private CadastroPagina cp;
 	private CadastroComentario cc;
 	
-	public Aplicacao1() {
-		ct = CadastroCategoria.getInstance();
-		cu = CadastroUsuario.getInstance();
-		cp = CadastroPagina.getInstance();
-		cc = CadastroComentario.getInstance();
+	public Aplicacao1() {		
+		try {
+			ct = (CadastroCategoria) CadastroFactory.get(CadastroCategoria.class);
+			cu = (CadastroUsuario) CadastroFactory.get(CadastroUsuario.class);
+			cp = (CadastroPagina) CadastroFactory.get(CadastroPagina.class);
+			cc = (CadastroComentario) CadastroFactory.get(CadastroComentario.class);
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void cadastrarCategoria() {
 		Categoria c1 = new Categoria();
 		c1.setNome("Teste1");
-		c1.setDescricao("Testando");
+		c1.setDescricao("Testando3");
 		
 		Categoria c2 = new Categoria();
 		c2.setNome("Teste2");
@@ -36,6 +45,8 @@ public class Aplicacao1 {
 		
 		ct.cadastrar(c1);
 		ct.cadastrar(c2);
+		
+		//ct.cadastrar(c1);
 	}
 	
 	public void cadastrarUsuario() {
@@ -74,9 +85,9 @@ public class Aplicacao1 {
 	
 	public static void main(String[] args) {
 		Aplicacao1 app = new Aplicacao1();
-		app.cadastrarUsuario();
+		//app.cadastrarUsuario();
 		app.cadastrarCategoria();
-		app.cadastrarPagina();
+		//app.cadastrarPagina();
 		app.listarCategorias();
 	}
 }
