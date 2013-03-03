@@ -43,6 +43,17 @@
 			</div>
 		</div>
 	</div>
+	<hr />
+	<footer class="container">
+		<div class="row">
+			<div class="span6">
+				<p>PWeb Blog</p>
+			</div>
+			<div class="span6 text-right">
+				<p>&copy; Desenvolvido por Rodrigo Lacerda e Emerson Raniere</p>
+			</div>
+		</div>		
+    </footer>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/redactor.min.js"></script>
 	<script type="text/javascript">

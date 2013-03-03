@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Categoria;
+import controllers.CadastroCategoria;
 
 /**
  * Servlet implementation class CadastroArtigo
@@ -32,6 +33,7 @@ public class CadastroArtigo extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//CadastroCategoria ct = CadastroCategoria.getInstance();
+		
 		List<Categoria> categorias = new ArrayList<Categoria>();
 		Categoria c = new Categoria();
 		c.setId(1);
