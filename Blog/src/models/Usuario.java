@@ -55,6 +55,4 @@ public abstract class Usuario {
 		this.email = email;
 	}
 	
-	
-
 }

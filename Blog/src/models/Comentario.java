@@ -32,7 +32,9 @@ public class Comentario {
 	@ManyToOne(fetch=FetchType.EAGER,optional=false)
 	private Artigo artigo;
 	
-	public Comentario() {}
+	public Comentario() {
+		this.data_publicacao = new Date();
+	}
 
 	public int getId() {
 		return id;
