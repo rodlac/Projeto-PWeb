@@ -1,4 +1,4 @@
-package servlets;
+package controllers;
 
 import java.io.IOException;
 
@@ -8,21 +8,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import facades.CategoriaFacade;
+
+
 import models.Categoria;
 
-import controllers.CadastroCategoria;
 
 /**
  * Servlet implementation class CadastroCategoria
  */
-@WebServlet("/cadastrar-categoria")
-public class CadastraCategoria extends HttpServlet {
+@WebServlet(urlPatterns="/cadastrar-categoria",name="AdminCadastraCategoria")
+public class CadastrarCategoria extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CadastraCategoria() {
+    public CadastrarCategoria() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,7 +40,7 @@ public class CadastraCategoria extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		CadastroCategoria ct = (CadastroCategoria) getServletContext().getAttribute("CadastroCategoria");
+		CategoriaFacade ct = (CategoriaFacade) getServletContext().getAttribute("CadastroCategoria");
 		Categoria c = new Categoria();
 		c.setNome(request.getParameter("nome"));
 		c.setDescricao(request.getParameter("descricao"));

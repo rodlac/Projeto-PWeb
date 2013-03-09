@@ -1,4 +1,4 @@
-package servlets;
+package controllers;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,13 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Pagina;
-import controllers.CadastroPagina;
+import facades.ArtigoFacade;
+
+import models.Artigo;
 
 /**
  * Servlet implementation class ListarArtigos
  */
-@WebServlet("/listar-artigos")
+@WebServlet(urlPatterns="/listar-artigos",name="AdminListarArtigos")
 public class ListarArtigos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,9 +32,9 @@ public class ListarArtigos extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		CadastroPagina cp = (CadastroPagina) getServletContext().getAttribute("CadastroPagina");
-		List<Pagina> categorias = cp.obterTodos();
-		request.setAttribute("artigos", categorias);
+		ArtigoFacade ca = (ArtigoFacade) getServletContext().getAttribute("CadastroArtigo");
+		List<Artigo> artigos = ca.obterTodos();
+		request.setAttribute("artigos", artigos);
 		request.getRequestDispatcher("admin/listar-artigos.jsp").forward(request, response);
 	}
 

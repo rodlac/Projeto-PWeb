@@ -1,4 +1,4 @@
-package servlets;
+package controllers;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,20 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Categoria;
-import controllers.CadastroCategoria;
+import facades.UsuarioFacade;
+
+import models.Usuario;
 
 /**
- * Servlet implementation class ListaCategorias
+ * Servlet implementation class ListarArtigos
  */
-@WebServlet("/listar-categorias")
-public class ListaCategorias extends HttpServlet {
+@WebServlet(urlPatterns="/listar-usuarios",name="AdminListarUsuarios")
+public class ListarUsuarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListaCategorias() {
+    public ListarUsuarios() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,10 +32,11 @@ public class ListaCategorias extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		CadastroCategoria ct = (CadastroCategoria) getServletContext().getAttribute("CadastroCategoria");
-		List<Categoria> categorias = ct.obterTodos();
-		request.setAttribute("categorias", categorias);
-		request.getRequestDispatcher("admin/listar-categorias.jsp").forward(request, response);
+		UsuarioFacade cu = (UsuarioFacade) getServletContext().getAttribute("CadastroUsuario");
+		
+		List<Usuario> usuarios = cu.obterTodos();
+		request.setAttribute("usuarios", usuarios);
+		request.getRequestDispatcher("admin/listar-usuarios.jsp").forward(request, response);
 	}
 
 }

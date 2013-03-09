@@ -1,15 +1,15 @@
-package system;
+package facades;
 
 import java.util.List;
 
 import dao.DAOJPA;
 
 @SuppressWarnings("unchecked")
-public abstract class Cadastro<T> {
+public abstract class GenericFacade<T> {
 	
 	private DAOJPA<?> dao;
 	
-	public Cadastro(DAOJPA<?> dao) {
+	public GenericFacade(DAOJPA<?> dao) {
 		this.dao = dao;
 	}
 	

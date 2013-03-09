@@ -4,10 +4,13 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import controllers.CadastroCategoria;
-import controllers.CadastroComentario;
-import controllers.CadastroPagina;
-import controllers.CadastroUsuario;
+import facades.ArtigoFacade;
+import facades.FacadeFactory;
+import facades.CategoriaFacade;
+import facades.ComentarioFacade;
+import facades.PaginaFacade;
+import facades.UsuarioFacade;
+
 
 /**
  * Application Lifecycle Listener implementation class TestListener
@@ -27,15 +30,17 @@ public class TestListener implements ServletContextListener {
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
     public void contextInitialized(ServletContextEvent e) {
-    	CadastroCategoria ct=null;
-    	CadastroPagina cp=null;
-    	CadastroComentario cc=null;
-    	CadastroUsuario cu=null;
+    	CategoriaFacade ct=null;
+    	PaginaFacade cp=null;
+    	ArtigoFacade ca=null;
+    	ComentarioFacade cc=null;
+    	UsuarioFacade cu=null;
 		try {
-			ct = (CadastroCategoria) CadastroFactory.get(CadastroCategoria.class);
-			cp = (CadastroPagina) CadastroFactory.get(CadastroPagina.class);
-			cc = (CadastroComentario) CadastroFactory.get(CadastroComentario.class);
-			cu = (CadastroUsuario) CadastroFactory.get(CadastroUsuario.class);
+			ct = (CategoriaFacade) FacadeFactory.get(CategoriaFacade.class);
+			cp = (PaginaFacade) FacadeFactory.get(PaginaFacade.class);
+			cc = (ComentarioFacade) FacadeFactory.get(ComentarioFacade.class);
+			cu = (UsuarioFacade) FacadeFactory.get(UsuarioFacade.class);
+			ca = (ArtigoFacade) FacadeFactory.get(ArtigoFacade.class);
 		} catch (InstantiationException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -48,6 +53,7 @@ public class TestListener implements ServletContextListener {
     	e.getServletContext().setAttribute("CadastroPagina", cp);
     	e.getServletContext().setAttribute("CadastroComentario", cc);
     	e.getServletContext().setAttribute("CadastroUsuario", cu);
+    	e.getServletContext().setAttribute("CadastroArtigo",ca);
     }
 
 	/**

@@ -24,13 +24,13 @@ public abstract class Pagina {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	protected int id;
 	
-	@Column(length=50,nullable=false)
+	@Column(length=100,nullable=false)
 	protected String titulo;
 	
 	@Column(columnDefinition="TEXT",nullable=false)
 	protected String texto;
 	
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(nullable=false,columnDefinition="DATETIME")
 	protected Date data_publicacao;
 	

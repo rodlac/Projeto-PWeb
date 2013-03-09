@@ -1,4 +1,4 @@
-package servlets;
+package controllers;
 
 import java.io.IOException;
 
@@ -8,20 +8,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Pagina;
-import controllers.CadastroPagina;
+import facades.ArtigoFacade;
+
+import models.Artigo;
 
 /**
  * Servlet implementation class Artigo
  */
 @WebServlet("/artigo")
-public class Artigo extends HttpServlet {
+public class VerArtigo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Artigo() {
+    public VerArtigo() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,8 +31,8 @@ public class Artigo extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		CadastroPagina cp = (CadastroPagina) getServletContext().getAttribute("CadastroPagina");
-		Pagina artigo = cp.obter(Integer.parseInt(request.getParameter("id")));
+		ArtigoFacade ca = (ArtigoFacade) getServletContext().getAttribute("CadastroArtigo");
+		Artigo artigo = ca.obter(Integer.parseInt(request.getParameter("id")));
 		request.setAttribute("artigo", artigo);
 		request.getRequestDispatcher("public/artigo.jsp").forward(request, response);
 	}
